@@ -2,13 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HalloXamarinForms"
-             x:Class="HalloXamarinForms.MainPage">
+             x:Class="HalloXamarinForms.MainPage"
+             BackgroundColor="DarkOliveGreen">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms! --- by michi" 
+    <!--<StackLayout>
+        <Label x:Name="labelHalloWelt" Text=" Hallo Xamarin.Forms! by michi" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <Button Text="Klick mich !" Clicked="Button_Clicked"/>
+    </StackLayout> -->
 
+    <!--<StackLayout BackgroundColor="OrangeRed">
+        <Entry Placeholder="Username:"/>
+        <Entry Placeholder="Passwort:"/>
+        <BoxView BackgroundColor="LimeGreen"
+                 VerticalOptions="FillAndExpand"/>
+        <Button Text="Login"/>
+    </StackLayout>-->
+
+    <!-- Margin: Aussenabstand -->
+    <!-- Padding: Innenabstand-->
+    <!-- Margin="links,oben,rechts,unten"-->
+    <!-- Margin="links+rechts,oben+unten"-->
+    <!-- Margin="alleRichtungen"-->
+    
+    <!--<StackLayout VerticalOptions="Center"
+                 BackgroundColor="IndianRed"
+                 Margin="20"
+                 Padding="20">
+        
+        <Label Text="Welcome to Xamarin"
+               BackgroundColor="Red"
+               FontSize="30"
+               HorizontalOptions="Center"/>
+        
+        <Label Text="Cross-platform apps made easy"
+               BackgroundColor="Green"
+               FontSize="25"
+               HorizontalTextAlignment="Center"/>
+        
+        <Button Text="Login"/>
+        <Button Text="Register"/>
+    </StackLayout>-->
+
+    <StackLayout>
+        <Entry x:Name="entryHöhe" Placeholder="Höhe:"/>
+        <Entry x:Name="entryBreite" Placeholder="Breite:"/>
+        <Button x:Name="buttonBildLaden" Text="Bild laden"
+                Clicked="ButtonBildLaden_Clicked"/>
+        <Image x:Name="image"
+               VerticalOptions="FillAndExpand"
+               Aspect="AspectFill"
+               Source="weihnachten.jpg"/>
+    </StackLayout>
+    
 </ContentPage>
