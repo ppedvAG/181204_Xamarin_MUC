@@ -2,8 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HalloXamarinForms"
-             x:Class="HalloXamarinForms.MainPage"
-             BackgroundColor="DarkOliveGreen">
+             x:Class="HalloXamarinForms.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="defaultSize">10</x:Double>
+            
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="specialButtonStyle">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="TextColor" Value="Blue"/>
+                <Setter Property="FontSize" Value="35"/>
+            </Style>
+
+            <!-- Impliziter Style -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+                <Setter Property="BorderRadius" Value="25"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <!--<StackLayout>
         <Label x:Name="labelHalloWelt" Text=" Hallo Xamarin.Forms! by michi" 
@@ -45,7 +66,7 @@
         <Button Text="Register"/>
     </StackLayout>-->
 
-    <StackLayout>
+    <!--<StackLayout>
         <Entry x:Name="entryHöhe" Placeholder="Höhe:"/>
         <Entry x:Name="entryBreite" Placeholder="Breite:"/>
         <Button x:Name="buttonBildLaden" Text="Bild laden"
@@ -54,6 +75,52 @@
                VerticalOptions="FillAndExpand"
                Aspect="AspectFill"
                Source="weihnachten.jpg"/>
-    </StackLayout>
-    
+    </StackLayout>-->
+
+    <!--<Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <BoxView Grid.Row="0" Grid.RowSpan="3" BackgroundColor="Indigo"/>
+        <BoxView Grid.Row="3" Grid.ColumnSpan="3" BackgroundColor="Peru" />
+        <BoxView Grid.Row="2" Grid.Column="2" BackgroundColor="Goldenrod"/>
+        <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="Goldenrod"/>
+        <Button Text="Demo1234" Padding="20" FontSize="30" Grid.Row="0" Grid.Column="2" BackgroundColor="Goldenrod"/>
+    </Grid>-->
+
+    <Grid Padding="40" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <Label Text="1234" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="30"/>
+
+        <Button Text="1" Grid.Column="0" Grid.Row="1" FontSize="{StaticResource defaultSize}" BackgroundColor="Orange" TextColor="Black" BorderRadius="25"/>
+        <Button Text="2" Grid.Column="1" Grid.Row="1" FontSize="{StaticResource defaultSize}" BackgroundColor="Orange" TextColor="Black" BorderRadius="25"/>
+        <Button Text="3" Grid.Column="2" Grid.Row="1" FontSize="{StaticResource defaultSize}" BackgroundColor="Orange" TextColor="Black" BorderRadius="25"/>
+        <Button Text="4" Grid.Column="0" Grid.Row="2" TextColor="White" Style="{StaticResource specialButtonStyle}"/>
+        <Button Text="5" Grid.Column="1" Grid.Row="2" Style="{StaticResource specialButtonStyle}"/>
+        <Button Text="6" Grid.Column="2" Grid.Row="2" Style="{StaticResource specialButtonStyle}"/>
+        <Button Text="7" Grid.Column="0" Grid.Row="3" />
+        <Button Text="8" Grid.Column="1" Grid.Row="3" />
+        <Button Text="9" Grid.Column="2" Grid.Row="3" />
+        <Button Text="0" Grid.Column="1" Grid.Row="4" />
+        <Button Text="DIAL" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" BackgroundColor="Green" TextColor="Black" BorderRadius="30"/>
+    </Grid>
+
+
 </ContentPage>

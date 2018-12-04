@@ -17,27 +17,27 @@ namespace HalloXamarinForms
             InitializeComponent();
         }
 
-        private void ButtonBildLaden_Clicked(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(entryHöhe.Text) || string.IsNullOrWhiteSpace(entryBreite.Text))
-            {
-                DisplayAlert("Warnung", "Bitte geben Sie eine gültige Höhe und Breite ein", "OK");
-                return;
-            }
+        //private void ButtonBildLaden_Clicked(object sender, EventArgs e)
+        //{
+        //    if(string.IsNullOrWhiteSpace(entryHöhe.Text) || string.IsNullOrWhiteSpace(entryBreite.Text))
+        //    {
+        //        DisplayAlert("Warnung", "Bitte geben Sie eine gültige Höhe und Breite ein", "OK");
+        //        return;
+        //    }
 
-            int höhe = Convert.ToInt32(entryHöhe.Text);
-            int breite = Convert.ToInt32(entryBreite.Text);
+        //    int höhe = Convert.ToInt32(entryHöhe.Text);
+        //    int breite = Convert.ToInt32(entryBreite.Text);
 
-            string url = $"http://placekitten.com/g/{höhe}/{breite}";
+        //    string url = $"http://placekitten.com/g/{höhe}/{breite}";
 
-            //UriImageSource source = (UriImageSource)ImageSource.FromUri(new Uri(url));
-            //source.CachingEnabled = true;                   // Standardfall : True
-            //source.CacheValidity = TimeSpan.FromHours(2);   // Standardfall: 24h
+        //    //UriImageSource source = (UriImageSource)ImageSource.FromUri(new Uri(url));
+        //    //source.CachingEnabled = true;                   // Standardfall : True
+        //    //source.CacheValidity = TimeSpan.FromHours(2);   // Standardfall: 24h
 
-            //image.Source = source;
+        //    //image.Source = source;
 
-            // Resource-Key -> Namespace.Ordnername.Dateiname
-            image.Source = ImageSource.FromResource("HalloXamarinForms.Images.weihnachten.jpg");
-        }
+        //    // Resource-Key -> Namespace.Ordnername.Dateiname
+        //    image.Source = ImageSource.FromResource("HalloXamarinForms.Images.weihnachten.jpg");
+        //}
     }
 }
