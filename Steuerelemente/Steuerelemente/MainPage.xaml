@@ -4,11 +4,57 @@
              xmlns:local="clr-namespace:Steuerelemente"
              x:Class="Steuerelemente.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!--<ScrollView>
+        <StackLayout>
+            <Label Text="Label - Beschriftungsfeld"/>
+            <Entry Placeholder="Platzhaltertext"/>
+            <Entry Placeholder="Passwort" IsPassword="True"/>
+            <Entry Placeholder="Zahlen" Keyboard="Numeric"/>
+            <Editor HeightRequest="100" Placeholder="Notizen eingeben..."/>
+            <Slider Minimum="0" Maximum="100" />
+            <Stepper Minimum="0" Maximum="10" Increment="2"/>
+            <ProgressBar Progress="0.5"/>
+            <Switch IsToggled="True"/>
+            <Picker x:Name="pickerObst">
+                <Picker.Items>
+                    <x:String>Apfel</x:String>
+                    <x:String>Birne</x:String>
+                    <x:String>Banane</x:String>
+                    <x:String>Orange</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Button Text="Klick mich" Clicked="Button_Clicked"/>
+            <DatePicker/>
+            <TimePicker Format="HH:mm"/>
+        </StackLayout>
+    </ScrollView>-->
 
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Basics">
+                <TextCell Text="Das ist eine Textzelle"
+                          Detail="...mit einer Unterüberschrift"/>
+                <EntryCell Label="Vorname:"/>
+                <EntryCell Label="Nachname:"/>
+            </TableSection>
+            <TableSection Title="Einstellungen">
+                <SwitchCell Text="Notification" On="True"/>
+                <ImageCell ImageSource="http://www.zooroyal.de/magazin/wp-content/uploads/2017/04/hamster-760x560.jpg"
+                           Text="Ein Bild"
+                           Detail="von einem Hamster"/>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Uhrzeit:"/>
+                        <TimePicker HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+                
+            </TableSection>
+            
+            
+            
+        </TableRoot>
+    </TableView>
+    
 </ContentPage>
