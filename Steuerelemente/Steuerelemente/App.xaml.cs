@@ -11,6 +11,7 @@ namespace Steuerelemente
         {
             InitializeComponent();
 
+            // -> "Einstiegspunkt und Wahl der Startseite"
             MainPage = new MainPage();
         }
 

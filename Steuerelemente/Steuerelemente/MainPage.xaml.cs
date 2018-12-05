@@ -21,6 +21,15 @@ namespace Steuerelemente
             
             // Wenn man mehr als 2 optionen braucht:
             DisplayActionSheet("Gibt es eine Frage?","Ok","Abbrechen", "Ja", "Nein", "Vielleicht", "Hab Angst");
+
+            if(Device.Idiom == TargetIdiom.Tablet)
+            {
+                // ....
+                if(Device.RuntimePlatform == Device.UWP)
+                {
+                    // surface-tablet
+                }
+            }
         }
     }
 }

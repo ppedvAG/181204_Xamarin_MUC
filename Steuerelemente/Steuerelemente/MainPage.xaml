@@ -30,7 +30,7 @@
         </StackLayout>
     </ScrollView>-->
 
-    <TableView>
+    <!--<TableView>
         <TableRoot>
             <TableSection Title="Basics">
                 <TextCell Text="Das ist eine Textzelle"
@@ -49,12 +49,57 @@
                         <TimePicker HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
                 </ViewCell>
-                
             </TableSection>
-            
-            
-            
         </TableRoot>
-    </TableView>
+    </TableView>-->
+
+    <!-- AbsoluteLayout.LayoutBounds="x,y,width,height" -->
+    <!--<AbsoluteLayout>
+        <BoxView BackgroundColor="DarkTurquoise"
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.3"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        <BoxView BackgroundColor="YellowGreen"
+                 AbsoluteLayout.LayoutBounds="20,50,100,100"/>
+        <BoxView BackgroundColor="RoyalBlue"
+                 AbsoluteLayout.LayoutBounds="25,70,50,50"/>
+        <BoxView BackgroundColor="FloralWhite"
+                 AbsoluteLayout.LayoutBounds="0,1,200,200"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>-->
+
+    <RelativeLayout>
+        <BoxView x:Name="boxViewHeader" BackgroundColor="LawnGreen"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.3,
+                                Constant=-50}"/>
+
+        <BoxView 
+                 HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Height,
+                                Factor=1,
+                                Constant=-50}"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-50}">
+            
+            <BoxView.BackgroundColor>
+                <OnPlatform iOS="Green" UWP="Red" Android="Blue"/>
+            </BoxView.BackgroundColor>
+            
+        </BoxView>
+
+    </RelativeLayout>
     
 </ContentPage>
