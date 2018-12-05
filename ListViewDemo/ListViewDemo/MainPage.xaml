@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewDemo"
+             x:Class="ListViewDemo.MainPage">
+
+    <StackLayout Padding="20">
+        <Button Text="Daten holen" Clicked="Button_Clicked"/>
+
+        <SearchBar x:Name="searchBarSuchtext" Placeholder="Suche Vorname"
+                   TextChanged="SearchBarSuchtext_TextChanged"/>
+        <ListView x:Name="listViewDaten" VerticalOptions="FillAndExpand"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewDaten_Refreshing"
+                  ItemSelected="ListViewDaten_ItemSelected"
+                  ItemTapped="ListViewDaten_ItemTapped">
+
+            <!-- CommandParameter="{Binding .}" 
+                 Binding .  => Bindet sich "auf sich selbst", das ist die Person -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ImageCell ImageSource="{Binding Image}"
+                               Text="{Binding Vorname}"
+                               Detail="{Binding Kontostand}">
+                        <ImageCell.ContextActions>
+                            <MenuItem Text="Info" x:Name="menuItemInfo" Clicked="MenuItemInfo_Clicked"/>
+                            <MenuItem IsDestructive="True" Text="Löschen" x:Name="menuItemLöschen"
+                                      Clicked="MenuItemLöschen_Clicked"
+                                      CommandParameter="{Binding .}"/>
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
