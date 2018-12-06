@@ -12,6 +12,19 @@ namespace CustomMarkupExtension
         public MainPage()
         {
             InitializeComponent();
+
+            //Subscriber
+            MessagingCenter.Subscribe<Slider, double>(this, "ValueChanged", MachWasWennSichDerSliderBewegt);
+        }
+
+        private void MachWasWennSichDerSliderBewegt(Slider arg1, double arg2)
+        {
+            labelWertAusSlider.Text = arg2.ToString();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Seite2());
         }
     }
 }

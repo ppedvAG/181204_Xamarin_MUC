@@ -6,6 +6,8 @@
 
     <StackLayout>
         <!-- Place new controls here -->
+        <Label x:Name="labelWertAusSlider" Text="Wert aus Seite 2 ;)"/>
+        <Button Text="Zur Seite 2 ->" Clicked="Button_Clicked"/>
         <Image Source="{local:ImageResource CustomMarkupExtension.Images.weihnachten.jpg}"/>
     </StackLayout>
 
