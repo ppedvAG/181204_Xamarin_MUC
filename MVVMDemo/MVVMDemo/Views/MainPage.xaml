@@ -5,6 +5,7 @@
              xmlns:vm="clr-namespace:MVVMDemo.ViewModels"
              x:Class="MVVMDemo.MainPage"
              BindingContext="{Binding Source={StaticResource Locator},Path=Main}">
+    
         <!-- Diese Variante funktioniert NUR, wenn man einen parameterlosen Konstruktor hat-->
     <!--<ContentPage.BindingContext>
         <vm:MainViewModel/>
