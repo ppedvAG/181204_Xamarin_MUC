@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MVVMDemo"
              xmlns:vm="clr-namespace:MVVMDemo.ViewModels"
-             x:Class="MVVMDemo.MainPage">
-    <ContentPage.BindingContext>
-        <vm:MainViewModel/>
+             x:Class="MVVMDemo.MainPage"
+             BindingContext="{Binding Source={StaticResource Locator},Path=Main}">
         <!-- Diese Variante funktioniert NUR, wenn man einen parameterlosen Konstruktor hat-->
-    </ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>-->
     
     <StackLayout>
         <Button Text="Get Personen" Command="{Binding GetPersonenCommand}"/>

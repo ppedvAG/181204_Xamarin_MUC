@@ -12,12 +12,11 @@ namespace MVVMDemo.ViewModels
 {
     class MainViewModel : BaseViewModel
     {
-        public MainViewModel()
+        public MainViewModel(PersonenService service)
         {
             GetPersonenCommand = new Command(GetPersonen);
 
-            // Controllfreak-Antipattern
-            service = new PersonenService();
+            this.service = service;
         }
 
         private readonly PersonenService service;
