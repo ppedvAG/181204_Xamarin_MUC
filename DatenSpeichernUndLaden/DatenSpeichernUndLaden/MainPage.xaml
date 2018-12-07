@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DatenSpeichernUndLaden"
+             x:Class="DatenSpeichernUndLaden.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="entryDaten" Placeholder="gib einen Text ein !"/>
+        <Button x:Name="buttonSpeichern" Text="Speichern" Clicked="ButtonSpeichern_Clicked"/>
+        <Button x:Name="buttonLaden" Text="Laden" Clicked="ButtonLaden_Clicked"/>
+        
+        <BoxView HeightRequest="5" BackgroundColor="Black"/>
+
+        <Entry x:Name="entryName" Placeholder="Personenname eingeben:"/>
+        <Button x:Name="buttonInDBSpeichern" Text="Person speichern" Clicked="ButtonInDBSpeichern_Clicked"/>
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding ID}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+    </StackLayout>
+
+</ContentPage>
