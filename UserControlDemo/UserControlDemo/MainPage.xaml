@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UserControlDemo"
+             x:Class="UserControlDemo.MainPage">
+
+    <StackLayout>
+        
+        <local:LabledEntry Label="Vorname:" Placeholder="Max" />
+        <local:LabledEntry Label="Nachname:" Placeholder="Mustermann" />
+        <local:LabledEntry Label="Alter:" Placeholder="100" />
+        <local:LabledEntry Label="Kontostand" Placeholder="100.000" />
+
+        <Entry Placeholder="email-Adresse">
+            <Entry.Behaviors>
+                <local:EmailValidationBehavior/>
+            </Entry.Behaviors>
+        </Entry>
+        
+
+    </StackLayout>
+
+</ContentPage>
